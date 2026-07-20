@@ -1,0 +1,13 @@
+{
+  "prepared_directory": "/Users/ximan/CMEE_MRes_Project/results/prepared",
+  "baseline_directory": "/Users/ximan/CMEE_MRes_Project/results/baseline",
+  "train_file": "/Users/ximan/CMEE_MRes_Project/results/prepared/06_model_train.pkl.gz",
+  "valid_file": "/Users/ximan/CMEE_MRes_Project/results/prepared/06_model_valid.pkl.gz",
+  "test_file": "/Users/ximan/CMEE_MRes_Project/results/prepared/06_model_test.pkl.gz",
+  "pseudo_count": 1e-08,
+  "methods": [
+    "Raw shallow RA",
+    "Training-mean RA"
+  ],
+  "note": "This stage evaluates only the Raw shallow RA and Training-mean RA baselines. Random Forest and XGBoost are not trained in this script."
+}
