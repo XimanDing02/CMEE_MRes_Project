@@ -1,0 +1,69 @@
+{
+  "target_split": "test",
+  "method_order": [
+    "Raw shallow RA",
+    "Training-mean RA",
+    "Random Forest",
+    "XGBoost"
+  ],
+  "method_short_names": {
+    "Raw shallow RA": "Raw",
+    "Training-mean RA": "Mean",
+    "Random Forest": "RF",
+    "XGBoost": "XGB"
+  },
+  "available_sample_metric_directions": {
+    "composition_RMSE_RA": "lower",
+    "composition_Spearman": "higher",
+    "Bray_Curtis": "lower",
+    "Jensen_Shannon_distance": "lower",
+    "RAD_RMSE_log10_RA_specific": "lower",
+    "RAD_head_MAE_log10": "lower",
+    "RAD_middle_MAE_log10": "lower",
+    "RAD_tail_MAE_log10": "lower",
+    "Top1_cumulative_error": "lower",
+    "Top5_cumulative_error": "lower",
+    "Top10_cumulative_error": "lower",
+    "Shannon_absolute_error": "lower",
+    "Simpson_absolute_error": "lower",
+    "richness_1read_absolute_error": "lower"
+  },
+  "available_primary_metrics": [
+    "Bray_Curtis",
+    "Jensen_Shannon_distance",
+    "RAD_RMSE_log10_RA_specific",
+    "RAD_tail_MAE_log10",
+    "Shannon_absolute_error",
+    "richness_1read_absolute_error"
+  ],
+  "available_abundance_metric_directions": {
+    "MAE_RA": "lower",
+    "RMSE_RA": "lower",
+    "MAE_log10_RA": "lower",
+    "RMSE_log10_RA": "lower",
+    "Spearman_RA": "higher"
+  },
+  "available_zero_metric_directions": {
+    "MAE_RA": "lower",
+    "RMSE_RA": "lower",
+    "MAE_log10_RA": "lower",
+    "RMSE_log10_RA": "lower"
+  },
+  "input_files": {
+    "sample_metrics": "/Users/ximan/CMEE_MRes_Project/results/intermediate/11_sample_metrics.csv",
+    "abundance_stratum_metrics": "/Users/ximan/CMEE_MRes_Project/results/intermediate/11_abundance_stratum_metrics.csv",
+    "zero_recovery_metrics": "/Users/ximan/CMEE_MRes_Project/results/intermediate/11_zero_recovery_metrics.csv"
+  },
+  "output_files": {
+    "test_sample_level_metrics": "/Users/ximan/CMEE_MRes_Project/results/intermediate/12_test_sample_level_metrics.csv",
+    "test_performance_summary": "/Users/ximan/CMEE_MRes_Project/results/statistics/12_test_performance_summary.csv",
+    "primary_metrics_summary": "/Users/ximan/CMEE_MRes_Project/results/statistics/12_primary_metrics_summary.csv",
+    "abundance_group_improvement": "/Users/ximan/CMEE_MRes_Project/results/statistics/12_abundance_group_improvement_vs_raw.csv",
+    "test_zero_recovery_results": "/Users/ximan/CMEE_MRes_Project/results/statistics/12_test_zero_recovery_results.csv",
+    "zero_recovery_improvement": "/Users/ximan/CMEE_MRes_Project/results/statistics/12_zero_recovery_improvement_vs_raw.csv"
+  },
+  "n_test_biological_samples": 72,
+  "shallow_repeats_per_sample_method": 5,
+  "statistical_unit": "Biological sample_id. Repeat-level metrics were averaged within each sample_id × method before statistical inference.",
+  "note": "This script prepares statistical tables only. Friedman, paired Wilcoxon, Holm correction, effect sizes and bootstrap confidence intervals are performed by script 13."
+}

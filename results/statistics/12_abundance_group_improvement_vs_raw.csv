@@ -1,0 +1,49 @@
+﻿split,abundance_group,metric,direction,baseline_method,model,raw_shallow_value,model_value,relative_improvement_percent
+test,Dominant (>=1e-2),MAE_RA,lower,Raw shallow RA,Random Forest,0.0034155161806538,0.0035762637755059,-4.706392426497877
+test,Dominant (>=1e-2),RMSE_RA,lower,Raw shallow RA,Random Forest,0.0047307037993082,0.0051058545872809,-7.930126338232402
+test,Dominant (>=1e-2),MAE_log10_RA,lower,Raw shallow RA,Random Forest,0.0466713695115582,0.0466622749956136,0.019486284717547098
+test,Dominant (>=1e-2),RMSE_log10_RA,lower,Raw shallow RA,Random Forest,0.0641168879131126,0.0641751116311298,-0.09080870876967503
+test,Dominant (>=1e-2),Spearman_RA,higher,Raw shallow RA,Random Forest,0.979914612715391,0.9803457693643676,0.04399941008959661
+test,Dominant (>=1e-2),MAE_RA,lower,Raw shallow RA,XGBoost,0.0034155161806538,0.005883028681639,-72.24420469625376
+test,Dominant (>=1e-2),RMSE_RA,lower,Raw shallow RA,XGBoost,0.0047307037993082,0.0138430920465639,-192.62225313257326
+test,Dominant (>=1e-2),MAE_log10_RA,lower,Raw shallow RA,XGBoost,0.0466713695115582,0.0562855662919452,-20.59977429632964
+test,Dominant (>=1e-2),RMSE_log10_RA,lower,Raw shallow RA,XGBoost,0.0641168879131126,0.0759145469282124,-18.400236504128657
+test,Dominant (>=1e-2),Spearman_RA,higher,Raw shallow RA,XGBoost,0.979914612715391,0.9761936131951098,-0.3797269141614487
+test,Common (1e-3 to 1e-2),MAE_RA,lower,Raw shallow RA,Random Forest,0.0009716986388327,0.0008942121702322,7.974331289954706
+test,Common (1e-3 to 1e-2),RMSE_RA,lower,Raw shallow RA,Random Forest,0.0012916947164893,0.0011975188919522,7.290873248522738
+test,Common (1e-3 to 1e-2),MAE_log10_RA,lower,Raw shallow RA,Random Forest,0.2860065980084144,0.1997216916587295,30.168851680528842
+test,Common (1e-3 to 1e-2),RMSE_log10_RA,lower,Raw shallow RA,Random Forest,0.8505555345173486,0.3945329538292014,53.61467443121385
+test,Common (1e-3 to 1e-2),Spearman_RA,higher,Raw shallow RA,Random Forest,0.8331070806343707,0.8562905884427807,2.7827764698334976
+test,Common (1e-3 to 1e-2),MAE_RA,lower,Raw shallow RA,XGBoost,0.0009716986388327,0.0009541357680885,1.8074400891719102
+test,Common (1e-3 to 1e-2),RMSE_RA,lower,Raw shallow RA,XGBoost,0.0012916947164893,0.001288950296236,0.21246663149317208
+test,Common (1e-3 to 1e-2),MAE_log10_RA,lower,Raw shallow RA,XGBoost,0.2860065980084144,0.207866354806394,27.321133059916843
+test,Common (1e-3 to 1e-2),RMSE_log10_RA,lower,Raw shallow RA,XGBoost,0.8505555345173486,0.3967485096547447,53.3541910488089
+test,Common (1e-3 to 1e-2),Spearman_RA,higher,Raw shallow RA,XGBoost,0.8331070806343707,0.8497445085839519,1.9970335550278404
+test,Rare (1e-4 to 1e-3),MAE_RA,lower,Raw shallow RA,Random Forest,0.0003285484679557,0.0002332239417999,29.013839799323954
+test,Rare (1e-4 to 1e-3),RMSE_RA,lower,Raw shallow RA,Random Forest,0.0004297665434301,0.0003126395404275,27.253634512303616
+test,Rare (1e-4 to 1e-3),MAE_log10_RA,lower,Raw shallow RA,Random Forest,2.45033036441023,0.8490155164138828,65.35097761732906
+test,Rare (1e-4 to 1e-3),RMSE_log10_RA,lower,Raw shallow RA,Random Forest,3.1887234684757115,1.2548248855545532,60.64804935391934
+test,Rare (1e-4 to 1e-3),Spearman_RA,higher,Raw shallow RA,Random Forest,0.4608886361226424,0.5213329257167388,13.114727692702798
+test,Rare (1e-4 to 1e-3),MAE_RA,lower,Raw shallow RA,XGBoost,0.0003285484679557,0.0002400585005074,26.933611347787977
+test,Rare (1e-4 to 1e-3),RMSE_RA,lower,Raw shallow RA,XGBoost,0.0004297665434301,0.0003215268209871,25.185702353446416
+test,Rare (1e-4 to 1e-3),MAE_log10_RA,lower,Raw shallow RA,XGBoost,2.45033036441023,0.8579942524321053,64.9845480065046
+test,Rare (1e-4 to 1e-3),RMSE_log10_RA,lower,Raw shallow RA,XGBoost,3.1887234684757115,1.2362799440262304,61.22962821178085
+test,Rare (1e-4 to 1e-3),Spearman_RA,higher,Raw shallow RA,XGBoost,0.4608886361226424,0.5174956347140762,12.282142399443039
+test,Very rare (<1e-4),MAE_RA,lower,Raw shallow RA,Random Forest,7.267194268156726e-05,4.68464415896951e-05,35.537100205279934
+test,Very rare (<1e-4),RMSE_RA,lower,Raw shallow RA,Random Forest,0.0001413946865162,7.859132637684538e-05,44.41705815597183
+test,Very rare (<1e-4),MAE_log10_RA,lower,Raw shallow RA,Random Forest,3.304300902376762,1.3147490523962435,60.210976807513106
+test,Very rare (<1e-4),RMSE_log10_RA,lower,Raw shallow RA,Random Forest,3.3839390133339435,1.5772506128249086,53.39009933069211
+test,Very rare (<1e-4),Spearman_RA,higher,Raw shallow RA,Random Forest,0.1741564993567178,0.2899574860394052,66.49248641906661
+test,Very rare (<1e-4),MAE_RA,lower,Raw shallow RA,XGBoost,7.267194268156726e-05,4.6118132955355555e-05,36.53928702933504
+test,Very rare (<1e-4),RMSE_RA,lower,Raw shallow RA,XGBoost,0.0001413946865162,7.467633949186309e-05,47.18589408711111
+test,Very rare (<1e-4),MAE_log10_RA,lower,Raw shallow RA,XGBoost,3.304300902376762,1.2852641722672378,61.103295061816084
+test,Very rare (<1e-4),RMSE_log10_RA,lower,Raw shallow RA,XGBoost,3.3839390133339435,1.531859339915942,54.731473177268796
+test,Very rare (<1e-4),Spearman_RA,higher,Raw shallow RA,XGBoost,0.1741564993567178,0.2993584580577197,71.89048882095165
+test,Reference zero,MAE_RA,lower,Raw shallow RA,Random Forest,0.0,4.178304626008233e-06,
+test,Reference zero,RMSE_RA,lower,Raw shallow RA,Random Forest,0.0,2.5875380101517104e-05,
+test,Reference zero,MAE_log10_RA,lower,Raw shallow RA,Random Forest,0.0,1.3119152179867235,
+test,Reference zero,RMSE_log10_RA,lower,Raw shallow RA,Random Forest,0.0,1.6293550212517476,
+test,Reference zero,MAE_RA,lower,Raw shallow RA,XGBoost,0.0,2.619334820303965e-06,
+test,Reference zero,RMSE_RA,lower,Raw shallow RA,XGBoost,0.0,1.1760618415179387e-05,
+test,Reference zero,MAE_log10_RA,lower,Raw shallow RA,XGBoost,0.0,1.3343787044767037,
+test,Reference zero,RMSE_log10_RA,lower,Raw shallow RA,XGBoost,0.0,1.6131308080986757,

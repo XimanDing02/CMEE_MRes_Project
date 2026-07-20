@@ -1,0 +1,59 @@
+{
+  "target_split": "test",
+  "input_sample_level_file": "/Users/ximan/CMEE_MRes_Project/results/intermediate/12_test_sample_level_metrics.csv",
+  "statistical_data_config_file": "/Users/ximan/CMEE_MRes_Project/results/statistics/12_statistical_data_config.json",
+  "method_order": [
+    "Raw shallow RA",
+    "Training-mean RA",
+    "Random Forest",
+    "XGBoost"
+  ],
+  "metric_directions": {
+    "composition_RMSE_RA": "lower",
+    "composition_Spearman": "higher",
+    "Bray_Curtis": "lower",
+    "Jensen_Shannon_distance": "lower",
+    "RAD_RMSE_log10_RA_specific": "lower",
+    "RAD_head_MAE_log10": "lower",
+    "RAD_middle_MAE_log10": "lower",
+    "RAD_tail_MAE_log10": "lower",
+    "Top1_cumulative_error": "lower",
+    "Top5_cumulative_error": "lower",
+    "Top10_cumulative_error": "lower",
+    "Shannon_absolute_error": "lower",
+    "Simpson_absolute_error": "lower",
+    "richness_1read_absolute_error": "lower"
+  },
+  "primary_metrics": [
+    "Bray_Curtis",
+    "Jensen_Shannon_distance",
+    "RAD_RMSE_log10_RA_specific",
+    "RAD_tail_MAE_log10",
+    "Shannon_absolute_error",
+    "richness_1read_absolute_error"
+  ],
+  "key_comparisons": [
+    "Random Forest vs Raw shallow RA",
+    "XGBoost vs Raw shallow RA",
+    "XGBoost vs Random Forest"
+  ],
+  "n_test_biological_samples": 72,
+  "n_bootstrap": 5000,
+  "random_state": 42,
+  "alpha": 0.05,
+  "statistical_unit": "Biological sample_id. Five shallow-subsampling repeats had already been averaged within each sample_id × method by script 12.",
+  "overall_test": "Friedman test across four paired methods",
+  "pairwise_test": "Paired two-sided Wilcoxon signed-rank test",
+  "multiple_testing": "Holm correction across the six pairwise comparisons within each metric",
+  "friedman_multiple_testing": "Holm correction across all tested metrics",
+  "effect_size": "Paired rank-biserial correlation. Positive values mean method_B is better than method_A.",
+  "bootstrap": "Biological-sample-level percentile bootstrap 95% confidence intervals for mean and median oriented improvements.",
+  "improvement_direction": "Positive oriented improvement and positive relative improvement percentage indicate method_B is better.",
+  "output_files": {
+    "friedman_tests": "/Users/ximan/CMEE_MRes_Project/results/statistics/13_friedman_overall_tests.csv",
+    "pairwise_tests": "/Users/ximan/CMEE_MRes_Project/results/statistics/13_pairwise_wilcoxon_holm.csv",
+    "key_comparisons": "/Users/ximan/CMEE_MRes_Project/results/statistics/13_key_model_comparisons.csv",
+    "primary_key_comparisons": "/Users/ximan/CMEE_MRes_Project/results/statistics/13_primary_key_model_comparisons.csv",
+    "paired_improvements": "/Users/ximan/CMEE_MRes_Project/results/intermediate/13_paired_sample_improvements.csv"
+  }
+}
