@@ -1,0 +1,3 @@
+﻿model,validation_metric,validation_scale,validation_value,selected_n_estimators,first_fit_minutes
+Random Forest,RMSE,log10_reference_ra,1.3495797887986827,220,0.1629862348238627
+XGBoost,RMSE,log10_reference_ra,1.3271910581278323,604,0.07397307952245076
