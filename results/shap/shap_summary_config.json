@@ -1,0 +1,30 @@
+{
+  "random_forest_shap_file": "/Users/ximan/CMEE_MRes_Project/results/shap/02_random_forest_shap_values.pkl.gz",
+  "xgboost_shap_file": "/Users/ximan/CMEE_MRes_Project/results/shap/03_xgboost_shap_values.pkl.gz",
+  "output_directory": "/Users/ximan/CMEE_MRes_Project/results/shap",
+  "feature_columns": [
+    "log1p_shallow_count",
+    "log10_shallow_ra",
+    "zero_in_shallow",
+    "shallow_rank_norm",
+    "shallow_richness",
+    "otu_mean_ra_train",
+    "otu_prevalence_train",
+    "otu_std_ra_train",
+    "otu_max_ra_train",
+    "is_other"
+  ],
+  "global_importance_definition": "Mean absolute SHAP value across the fixed independent-test-set SHAP sample.",
+  "subgroup_variables": [
+    "abundance_group",
+    "shallow_detection_group"
+  ],
+  "zero_recovery_definition": "zero_in_shallow == 1 and target_reference_ra > 0",
+  "local_case_types": [
+    "Highest reference RA",
+    "Largest positive zero recovery",
+    "Smallest absolute error",
+    "Largest absolute error"
+  ],
+  "interpretation_warning": "SHAP values explain the pre-normalisation model output on the log10(reference_RA + 1e-8) scale. They describe predictive associations and do not establish ecological causality."
+}
