@@ -12,3 +12,20 @@ __pycache__/
 
 # macOS system files
 .DS_Store
+
+results/models/*.joblib
+
+# macOS
+.DS_Store
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Large generated SHAP objects
+results/shap/*.pkl.gz
+
+# Large depth-sensitivity predictions and fitted models
+results/depth_sensitivity/**/08_test_predictions.pkl.gz
+results/depth_sensitivity/**/random_forest_model.joblib
+results/depth_sensitivity/**/xgboost_model.joblib

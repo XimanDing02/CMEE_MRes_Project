@@ -9,19 +9,34 @@
 from pathlib import Path
 
 
-# Project root directory:
-# CMEE_MRes_Project/
+# ============================================================
+# 1. Project directories
+# ============================================================
+
+# Project root:
+# CMEE_MRES_PROJECT/
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 # Original input data.
 DATA_DIR = PROJECT_ROOT / "data"
 
-# Analysis outputs.
+# Main results directory.
 RESULTS_DIR = PROJECT_ROOT / "results"
-INTERMEDIATE_DIR = RESULTS_DIR / "intermediate"
-PREPARED_DIR = RESULTS_DIR / "prepared"
-FINAL_DIR = RESULTS_DIR / "final"
 
+# Result subdirectories.
+BASELINE_DIR = RESULTS_DIR / "baseline"
+FIGURES_DIR = RESULTS_DIR / "figures"
+FINAL_DIR = RESULTS_DIR / "final"
+INTERMEDIATE_DIR = RESULTS_DIR / "intermediate"
+MODELS_DIR = RESULTS_DIR / "models"
+PREPARED_DIR = RESULTS_DIR / "prepared"
+SHAP_DIR = RESULTS_DIR / "shap"
+STATISTICS_DIR = RESULTS_DIR / "statistics"
+
+
+# ============================================================
+# 2. Console helper
+# ============================================================
 
 def banner(message: str) -> None:
     """Print a formatted section title in the terminal."""
@@ -32,8 +47,16 @@ def banner(message: str) -> None:
     print(line)
 
 
-def out(filename: str, directory: Path) -> Path:
-    """Return an output path and create the parent directory if needed."""
+# ============================================================
+# 3. Output-path helper
+# ============================================================
 
-    directory.mkdir(parents=True, exist_ok=True)
+def out(filename: str, directory: Path) -> Path:
+    """Return an output path and create the directory if needed."""
+
+    directory.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
     return directory / filename

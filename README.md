@@ -40,3 +40,5 @@ pandas
 pyreadr
 scikit-learn (/usr/local/bin/python3 -m pip install scikit-learn)
 python environment need: /usr/local/bin/python3 -m pip
+/usr/local/bin/python3 -m pip install shap
+/usr/local/bin/python3 -m pip install seaborn
