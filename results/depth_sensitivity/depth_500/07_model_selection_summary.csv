@@ -1,0 +1,2 @@
+﻿depth,rf_validation_log_rmse,xgb_validation_log_rmse,xgb_best_iteration,rf_first_fit_minutes,xgb_first_fit_minutes,total_depth_minutes
+500,1.4760300121374899,1.4647874338132902,613,0.12218648195266724,0.07107498248418172,0.5276214321454366

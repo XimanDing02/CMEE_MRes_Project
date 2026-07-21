@@ -1,0 +1,11 @@
+{
+  "depth": 500,
+  "status": "complete",
+  "subsample_repeats": 5,
+  "training_samples": 331,
+  "validation_samples": 71,
+  "test_samples": 72,
+  "components": 255,
+  "xgb_best_iteration": 613,
+  "total_minutes": 0.5276214321454366
+}
