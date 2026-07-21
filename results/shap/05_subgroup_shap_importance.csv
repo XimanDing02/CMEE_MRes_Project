@@ -1,0 +1,141 @@
+﻿model,subgroup_variable,subgroup,number_of_rows,importance_rank,feature,mean_abs_SHAP,importance_percent,mean_signed_SHAP
+Random Forest,abundance_group,Very rare (<1e-4),68,1,otu_prevalence_train,0.5350668268329283,24.448593093764583,0.20418270509178238
+Random Forest,abundance_group,Very rare (<1e-4),68,2,shallow_richness,0.37235659190111425,17.013939838236034,0.006666726493191806
+Random Forest,abundance_group,Very rare (<1e-4),68,3,zero_in_shallow,0.2797960996872763,12.784610533540997,-0.21916532527669
+Random Forest,abundance_group,Very rare (<1e-4),68,4,log10_shallow_ra,0.2710143689361302,12.38335044596541,-0.2585160137647837
+Random Forest,abundance_group,Very rare (<1e-4),68,5,log1p_shallow_count,0.2673621459058082,12.216470889472369,-0.25207628998371134
+Random Forest,abundance_group,Very rare (<1e-4),68,6,shallow_rank_norm,0.23947665449939107,10.942310357692593,-0.18786687596076315
+Random Forest,abundance_group,Very rare (<1e-4),68,7,otu_mean_ra_train,0.08671943149067521,3.962436068756929,0.02044107342334454
+Random Forest,abundance_group,Very rare (<1e-4),68,8,otu_std_ra_train,0.07557125585596842,3.4530469678776265,0.006119879247788677
+Random Forest,abundance_group,Very rare (<1e-4),68,9,otu_max_ra_train,0.0611620118781143,2.7946511841424995,0.004880096777219147
+Random Forest,abundance_group,Very rare (<1e-4),68,10,is_other,1.2925957041620006e-05,0.0005906205509479746,-1.2925957041620006e-05
+Random Forest,abundance_group,Reference zero,98,1,otu_prevalence_train,0.6602559997473543,28.894601492011862,-0.34167063966168637
+Random Forest,abundance_group,Reference zero,98,2,log10_shallow_ra,0.3095734793335022,13.547778924023266,-0.3095734793335022
+Random Forest,abundance_group,Reference zero,98,3,log1p_shallow_count,0.3042425796403061,13.314484228802426,-0.3042425796403061
+Random Forest,abundance_group,Reference zero,98,4,zero_in_shallow,0.2993098935606576,13.098616446289013,-0.2993098935606576
+Random Forest,abundance_group,Reference zero,98,5,shallow_richness,0.28961415119957135,12.674304343407696,-0.06365805061723001
+Random Forest,abundance_group,Reference zero,98,6,shallow_rank_norm,0.2555582069171716,11.183923432290436,-0.2555582069171716
+Random Forest,abundance_group,Reference zero,98,7,otu_mean_ra_train,0.07222473127538277,3.1607510251605153,-0.039100574690411324
+Random Forest,abundance_group,Reference zero,98,8,otu_std_ra_train,0.050670104319364265,2.217461821516096,-0.01765375987239534
+Random Forest,abundance_group,Reference zero,98,9,otu_max_ra_train,0.04358930136370491,1.9075865917180703,-0.00872415497200701
+Random Forest,abundance_group,Reference zero,98,10,is_other,1.1235470024853794e-05,0.0004916947806120952,-1.1235470024853794e-05
+Random Forest,abundance_group,Rare (1e-4 to 1e-3),84,1,otu_prevalence_train,0.46511520613615387,22.844761258326898,0.41182666707766247
+Random Forest,abundance_group,Rare (1e-4 to 1e-3),84,2,zero_in_shallow,0.3518150328370878,17.279870290675873,0.09334531328004447
+Random Forest,abundance_group,Rare (1e-4 to 1e-3),84,3,shallow_rank_norm,0.30303496733887747,14.883971520284017,0.0809293526279931
+Random Forest,abundance_group,Rare (1e-4 to 1e-3),84,4,shallow_richness,0.26377302093403726,12.95556801869383,0.1405111690138324
+Random Forest,abundance_group,Rare (1e-4 to 1e-3),84,5,log1p_shallow_count,0.23036576344894297,11.314725467270074,-0.042729755602645504
+Random Forest,abundance_group,Rare (1e-4 to 1e-3),84,6,log10_shallow_ra,0.22283262514367014,10.944725209614473,-0.05619137875846007
+Random Forest,abundance_group,Rare (1e-4 to 1e-3),84,7,otu_mean_ra_train,0.0855248243437146,4.200667206783533,0.02391348900604911
+Random Forest,abundance_group,Rare (1e-4 to 1e-3),84,8,otu_max_ra_train,0.06057977375759067,2.975457371244267,0.01901250767238773
+Random Forest,abundance_group,Rare (1e-4 to 1e-3),84,9,otu_std_ra_train,0.05290288689617503,2.598396709192104,0.012027584484424364
+Random Forest,abundance_group,Rare (1e-4 to 1e-3),84,10,is_other,3.7807123588174375e-05,0.00185694791492814,-3.7807123588174375e-05
+Random Forest,abundance_group,Dominant (>=1e-2),17,1,log10_shallow_ra,0.9149376935804977,23.904650975647186,0.9149376935804977
+Random Forest,abundance_group,Dominant (>=1e-2),17,2,log1p_shallow_count,0.874955582882925,22.86003514202149,0.874955582882925
+Random Forest,abundance_group,Dominant (>=1e-2),17,3,otu_prevalence_train,0.7430267800036752,19.41312065965739,0.6852174274132494
+Random Forest,abundance_group,Dominant (>=1e-2),17,4,zero_in_shallow,0.5906027428521589,15.430725537048415,0.5906027428521589
+Random Forest,abundance_group,Dominant (>=1e-2),17,5,shallow_rank_norm,0.5392014299670281,14.087759286089184,0.5392014299670281
+Random Forest,abundance_group,Dominant (>=1e-2),17,6,shallow_richness,0.08284438902865353,2.1644820395045428,-0.019350798313907975
+Random Forest,abundance_group,Dominant (>=1e-2),17,7,otu_mean_ra_train,0.04872115474358002,1.2729415428475939,0.04599378277721533
+Random Forest,abundance_group,Dominant (>=1e-2),17,8,otu_max_ra_train,0.020126763050644883,0.5258535628938846,0.010658397115024662
+Random Forest,abundance_group,Dominant (>=1e-2),17,9,otu_std_ra_train,0.012809917723276977,0.33468575439640225,-0.007843157814362671
+Random Forest,abundance_group,Dominant (>=1e-2),17,10,is_other,0.00021990592653974467,0.005745499893918631,-0.00018628035808026925
+Random Forest,abundance_group,Common (1e-3 to 1e-2),33,1,otu_prevalence_train,0.525121928523466,22.095160490589887,0.5093862151202151
+Random Forest,abundance_group,Common (1e-3 to 1e-2),33,2,zero_in_shallow,0.4817527726413067,20.270349132488512,0.4687725963739951
+Random Forest,abundance_group,Common (1e-3 to 1e-2),33,3,shallow_rank_norm,0.4138794881814954,17.41449598352603,0.4027203161056557
+Random Forest,abundance_group,Common (1e-3 to 1e-2),33,4,log1p_shallow_count,0.3618729877153599,15.226257572716925,0.3478370262743873
+Random Forest,abundance_group,Common (1e-3 to 1e-2),33,5,log10_shallow_ra,0.36136777668802067,15.205000188242307,0.34692378617008934
+Random Forest,abundance_group,Common (1e-3 to 1e-2),33,6,shallow_richness,0.126659426016595,5.329353419598443,0.04386689295789975
+Random Forest,abundance_group,Common (1e-3 to 1e-2),33,7,otu_mean_ra_train,0.06547315062832833,2.7548645226550184,0.057622176098112564
+Random Forest,abundance_group,Common (1e-3 to 1e-2),33,8,otu_std_ra_train,0.02201717528447255,0.926400127352768,0.007198099975377861
+Random Forest,abundance_group,Common (1e-3 to 1e-2),33,9,otu_max_ra_train,0.01834704471492295,0.7719748033453844,0.00878144991796278
+Random Forest,abundance_group,Common (1e-3 to 1e-2),33,10,is_other,0.00014601490812340373,0.006143759484729218,-0.00014139258526126383
+Random Forest,shallow_detection_group,Shallow zero,208,1,otu_prevalence_train,0.6224274719577374,27.73668804365257,0.030857148536824905
+Random Forest,shallow_detection_group,Shallow zero,208,2,shallow_richness,0.3324697137259379,14.815555464757763,0.016213139936507207
+Random Forest,shallow_detection_group,Shallow zero,208,3,log10_shallow_ra,0.28987207498967543,12.917314351929521,-0.28987207498967543
+Random Forest,shallow_detection_group,Shallow zero,208,4,log1p_shallow_count,0.28451098456219437,12.678412793980693,-0.28451098456219437
+Random Forest,shallow_detection_group,Shallow zero,208,5,zero_in_shallow,0.27580268820925846,12.29035264205112,-0.27580268820925846
+Random Forest,shallow_detection_group,Shallow zero,208,6,shallow_rank_norm,0.23599493495498347,10.516434742412699,-0.23599493495498347
+Random Forest,shallow_detection_group,Shallow zero,208,7,otu_mean_ra_train,0.07924362244515509,3.5312638568104395,-0.002190108021054622
+Random Forest,shallow_detection_group,Shallow zero,208,8,otu_std_ra_train,0.06444976727505956,2.872018299211115,-0.001269273668424373
+Random Forest,shallow_detection_group,Shallow zero,208,9,otu_max_ra_train,0.05927395702339589,2.641373218793968,0.002675619917987294
+Random Forest,shallow_detection_group,Shallow zero,208,10,is_other,1.3163341258898567e-05,0.0005865864001179579,-1.3163341258898567e-05
+Random Forest,shallow_detection_group,Detected in shallow,92,1,zero_in_shallow,0.5052401748273769,21.079412652697776,0.5052401748273769
+Random Forest,shallow_detection_group,Detected in shallow,92,2,otu_prevalence_train,0.44190080705917667,18.436794870366718,0.40254669307883
+Random Forest,shallow_detection_group,Detected in shallow,92,3,shallow_rank_norm,0.4404516846641236,18.376335210839397,0.4404516846641236
+Random Forest,shallow_detection_group,Detected in shallow,92,4,log1p_shallow_count,0.38027056055148195,15.865484308084039,0.38027056055148195
+Random Forest,shallow_detection_group,Detected in shallow,92,5,log10_shallow_ra,0.37685656954488067,15.723047247837718,0.3767223000645082
+Random Forest,shallow_detection_group,Detected in shallow,92,6,shallow_richness,0.133628087416658,5.575173426398462,0.040914102474904145
+Random Forest,shallow_detection_group,Detected in shallow,92,7,otu_mean_ra_train,0.07244815634792268,3.022650730628868,0.029411286265923688
+Random Forest,shallow_detection_group,Detected in shallow,92,8,otu_max_ra_train,0.02324014916934288,0.9696154796443257,0.01074327927588716
+Random Forest,shallow_detection_group,Detected in shallow,92,9,otu_std_ra_train,0.022686325144056205,0.9465090725380723,0.0007023147545881161
+Random Forest,shallow_detection_group,Detected in shallow,92,10,is_other,0.0001192908397833648,0.004977000964619546,-0.00011141941241095502
+XGBoost,abundance_group,Very rare (<1e-4),68,1,log1p_shallow_count,0.8900714315035764,41.41778786081577,-0.7659290143672157
+XGBoost,abundance_group,Very rare (<1e-4),68,2,otu_prevalence_train,0.4910550594795495,22.850316909000277,0.16269666765926077
+XGBoost,abundance_group,Very rare (<1e-4),68,3,shallow_richness,0.34405360791681555,16.00988284881234,-0.004699730714920032
+XGBoost,abundance_group,Very rare (<1e-4),68,4,log10_shallow_ra,0.17351825469556978,8.074343258967112,-0.14997520670294762
+XGBoost,abundance_group,Very rare (<1e-4),68,5,otu_std_ra_train,0.08712782003011157,4.054328044982305,-3.875476763556328e-06
+XGBoost,abundance_group,Very rare (<1e-4),68,6,otu_mean_ra_train,0.08126751331763123,3.7816297742302565,0.018741043246871626
+XGBoost,abundance_group,Very rare (<1e-4),68,7,otu_max_ra_train,0.056564792423159815,2.6321354557081964,0.0030590282361064214
+XGBoost,abundance_group,Very rare (<1e-4),68,8,shallow_rank_norm,0.023155295129125827,1.0774877920670132,0.02196794342564638
+XGBoost,abundance_group,Very rare (<1e-4),68,9,zero_in_shallow,0.0021698859023565414,0.10097152970538513,-0.0017158087519098498
+XGBoost,abundance_group,Very rare (<1e-4),68,10,is_other,2.399422300293415e-05,0.0011165257113598746,-2.399422300293415e-05
+XGBoost,abundance_group,Reference zero,98,1,log1p_shallow_count,0.9707149802422037,42.907856193744706,-0.9707149802422037
+XGBoost,abundance_group,Reference zero,98,2,otu_prevalence_train,0.5880416605802139,25.99280687088099,-0.304764686755798
+XGBoost,abundance_group,Reference zero,98,3,shallow_richness,0.2708412697800074,11.971813036358164,-0.06879219394984978
+XGBoost,abundance_group,Reference zero,98,4,log10_shallow_ra,0.18993287883242782,8.395474281619036,-0.18993287883242782
+XGBoost,abundance_group,Reference zero,98,5,otu_mean_ra_train,0.0865213330407456,3.824443828895182,-0.05164607638512187
+XGBoost,abundance_group,Reference zero,98,6,otu_std_ra_train,0.07188079953763862,3.1772982517307353,-0.04387496570980518
+XGBoost,abundance_group,Reference zero,98,7,otu_max_ra_train,0.05937807580185294,2.624648830423405,-0.03746076813324031
+XGBoost,abundance_group,Reference zero,98,8,shallow_rank_norm,0.022571730807575643,0.9977229148083413,0.022571730807575643
+XGBoost,abundance_group,Reference zero,98,9,zero_in_shallow,0.0024205755887253743,0.1069950617648887,-0.0023900732247762345
+XGBoost,abundance_group,Reference zero,98,10,is_other,2.1282360983011075e-05,0.000940729774557053,-2.1282360983011075e-05
+XGBoost,abundance_group,Rare (1e-4 to 1e-3),84,1,log1p_shallow_count,0.938991870198931,46.39576958500176,0.06991161760829744
+XGBoost,abundance_group,Rare (1e-4 to 1e-3),84,2,otu_prevalence_train,0.4178328055450471,20.645199587314718,0.3676525753773084
+XGBoost,abundance_group,Rare (1e-4 to 1e-3),84,3,shallow_richness,0.2429571977949568,12.004562047512119,0.1409886035225576
+XGBoost,abundance_group,Rare (1e-4 to 1e-3),84,4,log10_shallow_ra,0.17980983888819105,8.884438852921495,0.011602202164275306
+XGBoost,abundance_group,Rare (1e-4 to 1e-3),84,5,otu_mean_ra_train,0.09429584066605284,4.659175691733488,0.03562658076130208
+XGBoost,abundance_group,Rare (1e-4 to 1e-3),84,6,otu_std_ra_train,0.06652919272337818,3.287220256354402,0.01337742930211659
+XGBoost,abundance_group,Rare (1e-4 to 1e-3),84,7,otu_max_ra_train,0.057328842212709355,2.8326291614348986,0.01796234717108919
+XGBoost,abundance_group,Rare (1e-4 to 1e-3),84,8,shallow_rank_norm,0.023950723830022894,1.183409888284055,0.00921051888144575
+XGBoost,abundance_group,Rare (1e-4 to 1e-3),84,9,zero_in_shallow,0.002106950153358325,0.1041048138378315,0.00015945373161230236
+XGBoost,abundance_group,Rare (1e-4 to 1e-3),84,10,is_other,7.063553872891741e-05,0.003490115605244833,-7.063553872891741e-05
+XGBoost,abundance_group,Dominant (>=1e-2),17,1,log1p_shallow_count,2.4623462452608,63.32145835745614,2.4623462452608
+XGBoost,abundance_group,Dominant (>=1e-2),17,2,otu_prevalence_train,0.7046471956898185,18.12063926608552,0.6518178950337803
+XGBoost,abundance_group,Dominant (>=1e-2),17,3,log10_shallow_ra,0.4877687780296101,12.543414812402997,0.4877687780296101
+XGBoost,abundance_group,Dominant (>=1e-2),17,4,shallow_richness,0.08947363572523874,2.300895379587785,-0.030861765255822855
+XGBoost,abundance_group,Dominant (>=1e-2),17,5,otu_mean_ra_train,0.0815819782369277,2.0979542773852926,0.0799606405198574
+XGBoost,abundance_group,Dominant (>=1e-2),17,6,otu_std_ra_train,0.02560877361204749,0.6585527502404668,-0.008276215475394992
+XGBoost,abundance_group,Dominant (>=1e-2),17,7,otu_max_ra_train,0.01760074044303859,0.45261894226667504,0.0039222697617814824
+XGBoost,abundance_group,Dominant (>=1e-2),17,8,shallow_rank_norm,0.016340346746694517,0.42020677963493347,-0.005879824940005646
+XGBoost,abundance_group,Dominant (>=1e-2),17,9,zero_in_shallow,0.003180890905616038,0.08179948348338135,0.003180890905616038
+XGBoost,abundance_group,Dominant (>=1e-2),17,10,is_other,9.565876071599847e-05,0.0024599514568116325,5.4385861724714394e-05
+XGBoost,abundance_group,Common (1e-3 to 1e-2),33,1,log1p_shallow_count,1.3958888631878477,57.6648195424007,1.34989016345053
+XGBoost,abundance_group,Common (1e-3 to 1e-2),33,2,otu_prevalence_train,0.478866720289895,19.78220740819968,0.4645942463116212
+XGBoost,abundance_group,Common (1e-3 to 1e-2),33,3,log10_shallow_ra,0.2700169948917447,11.154527910090819,0.261175941788789
+XGBoost,abundance_group,Common (1e-3 to 1e-2),33,4,shallow_richness,0.1286638050311894,5.315161754223211,0.0312581133153854
+XGBoost,abundance_group,Common (1e-3 to 1e-2),33,5,otu_mean_ra_train,0.07329503131437708,3.0278519053772173,0.06276807589033111
+XGBoost,abundance_group,Common (1e-3 to 1e-2),33,6,otu_std_ra_train,0.02983762695591643,1.2326062764459849,0.01090174727935598
+XGBoost,abundance_group,Common (1e-3 to 1e-2),33,7,shallow_rank_norm,0.022773459878270372,0.9407822419597884,-0.01873871555664774
+XGBoost,abundance_group,Common (1e-3 to 1e-2),33,8,otu_max_ra_train,0.018698677013162524,0.7724510626033628,0.005899408989176719
+XGBoost,abundance_group,Common (1e-3 to 1e-2),33,9,zero_in_shallow,0.0024748007735152814,0.10223517342365081,0.0022479856129255936
+XGBoost,abundance_group,Common (1e-3 to 1e-2),33,10,is_other,0.000178083811988472,0.007356725275596751,-0.00013974815291558943
+XGBoost,shallow_detection_group,Shallow zero,208,1,log1p_shallow_count,0.9071847710471886,41.14682729525699,-0.9071847710471886
+XGBoost,shallow_detection_group,Shallow zero,208,2,otu_prevalence_train,0.5591897801316988,25.36295365914481,0.019698447216517076
+XGBoost,shallow_detection_group,Shallow zero,208,3,shallow_richness,0.3059185402078303,13.87542840453388,0.006761619874920983
+XGBoost,shallow_detection_group,Shallow zero,208,4,log10_shallow_ra,0.17703268236409014,8.029602611651864,-0.17703268236409014
+XGBoost,shallow_detection_group,Shallow zero,208,5,otu_mean_ra_train,0.08495109159020313,3.853093664888941,-0.0032973448139203424
+XGBoost,shallow_detection_group,Shallow zero,208,6,otu_std_ra_train,0.08162877238856499,3.7024045233023593,-0.016466649225829036
+XGBoost,shallow_detection_group,Shallow zero,208,7,otu_max_ra_train,0.06260089684292325,2.83936456291105,-0.012170451619637718
+XGBoost,shallow_detection_group,Shallow zero,208,8,shallow_rank_norm,0.024073501753334243,1.091892468491389,0.024073501753334243
+XGBoost,shallow_detection_group,Shallow zero,208,9,zero_in_shallow,0.002147335113967039,0.09739584470476828,-0.0020939645144328377
+XGBoost,shallow_detection_group,Shallow zero,208,10,is_other,2.2862490775073988e-05,0.001036965113926546,-2.2862490775073988e-05
+XGBoost,shallow_detection_group,Detected in shallow,92,1,log1p_shallow_count,1.4539133562989857,59.38356788975597,1.4539133562989857
+XGBoost,shallow_detection_group,Detected in shallow,92,2,otu_prevalence_train,0.4085642638712433,16.68737933784884,0.3738531277530179
+XGBoost,shallow_detection_group,Detected in shallow,92,3,log10_shallow_ra,0.28148393519222736,11.49691644481041,0.28148393519222736
+XGBoost,shallow_detection_group,Detected in shallow,92,4,shallow_richness,0.13567821088793647,5.5416343845509966,0.0421986608290235
+XGBoost,shallow_detection_group,Detected in shallow,92,5,otu_mean_ra_train,0.0876297257845695,3.579144347043586,0.03611123210335474
+XGBoost,shallow_detection_group,Detected in shallow,92,6,otu_std_ra_train,0.03259422271335295,1.331276880377037,0.005084988320722123
+XGBoost,shallow_detection_group,Detected in shallow,92,7,otu_max_ra_train,0.025830026574587227,1.0550003753942898,0.009114226357031957
+XGBoost,shallow_detection_group,Detected in shallow,92,8,shallow_rank_norm,0.019787741256827165,0.80820956160752,-0.013544452651251999
+XGBoost,shallow_detection_group,Detected in shallow,92,9,zero_in_shallow,0.0027266340125409088,0.11136650976672355,0.002459730781755871
+XGBoost,shallow_detection_group,Detected in shallow,92,10,is_other,0.0001347633743515199,0.005504268844621842,-9.328690336350637e-05

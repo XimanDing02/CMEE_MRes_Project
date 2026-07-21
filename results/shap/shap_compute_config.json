@@ -1,0 +1,25 @@
+{
+  "random_forest_model_file": "/Users/ximan/CMEE_MRes_Project/results/models/random_forest_model.joblib",
+  "xgboost_model_file": "/Users/ximan/CMEE_MRes_Project/results/models/xgboost_model.joblib",
+  "test_prediction_file": "/Users/ximan/CMEE_MRes_Project/results/intermediate/11_predictions_test.pkl.gz",
+  "shap_output_directory": "/Users/ximan/CMEE_MRes_Project/results/shap",
+  "feature_columns": [
+    "log1p_shallow_count",
+    "log10_shallow_ra",
+    "zero_in_shallow",
+    "shallow_rank_norm",
+    "shallow_richness",
+    "otu_mean_ra_train",
+    "otu_prevalence_train",
+    "otu_std_ra_train",
+    "otu_max_ra_train",
+    "is_other"
+  ],
+  "n_shap_rows_requested": 300,
+  "n_shap_rows_used": 300,
+  "exclude_other": true,
+  "random_state": 42,
+  "pseudocount": 1e-08,
+  "shap_target": "Pre-normalisation model output on the log10(reference_RA + 1e-8) scale.",
+  "interpretation_warning": "SHAP values describe predictive associations. They do not establish ecological causality and do not directly explain the final within-sample normalised relative abundance."
+}

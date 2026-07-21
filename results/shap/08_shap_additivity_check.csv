@@ -1,0 +1,3 @@
+﻿model,mean_absolute_additivity_error,max_absolute_additivity_error
+Random Forest,5.271579469242245e-14,3.0109248427834245e-13
+XGBoost,2.3437317637823677e-06,1.0124806067324243e-05
