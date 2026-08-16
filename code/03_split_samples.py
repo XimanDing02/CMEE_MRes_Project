@@ -490,30 +490,6 @@ def main(input_path: str | Path) -> None:
         )
     )
 
-    # Keep the output in a stable and readable order.
-    split_order_mapping = {
-        "train": 0,
-        "valid": 1,
-        "test": 2,
-    }
-
-    sample_split["_split_order"] = (
-        sample_split["split"]
-        .map(split_order_mapping)
-    )
-
-    sample_split = (
-        sample_split
-        .sort_values(
-            [
-                "_split_order",
-                "sample_id",
-            ]
-        )
-        .drop(columns="_split_order")
-        .reset_index(drop=True)
-    )
-
     split_output = out(
         "02_sample_split.csv",
         PREPARED_DIR,
