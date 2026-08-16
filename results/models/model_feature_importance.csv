@@ -1,21 +1,21 @@
 ﻿model,feature,importance,rank_within_model
-Random Forest,zero_in_shallow,0.19478965140383533,1
-Random Forest,log10_shallow_ra,0.17945937980947743,2
-Random Forest,log1p_shallow_count,0.17634736883353871,3
-Random Forest,shallow_rank_norm,0.17347422361159717,4
-Random Forest,otu_prevalence_train,0.14218554022085675,5
-Random Forest,shallow_richness,0.08031670151869348,6
-Random Forest,otu_mean_ra_train,0.021643022959560294,7
-Random Forest,otu_max_ra_train,0.01730959571887824,8
-Random Forest,otu_std_ra_train,0.014470424032169155,9
-Random Forest,is_other,4.091891393475493e-06,10
-XGBoost,log1p_shallow_count,0.4559994339942932,1
-XGBoost,log10_shallow_ra,0.44287851452827454,2
-XGBoost,otu_prevalence_train,0.05072551965713501,3
-XGBoost,zero_in_shallow,0.012890242971479893,4
-XGBoost,otu_max_ra_train,0.010576115921139717,5
-XGBoost,shallow_richness,0.009691338054835796,6
-XGBoost,otu_std_ra_train,0.008361658081412315,7
-XGBoost,otu_mean_ra_train,0.008153796195983887,8
-XGBoost,shallow_rank_norm,0.0005067361635155976,9
-XGBoost,is_other,0.00021660924539901316,10
+Random Forest,shallow_rank_norm,0.40847683937453916,1
+Random Forest,otu_prevalence_train,0.14103832468277663,2
+Random Forest,log10_shallow_ra,0.11667312738617425,3
+Random Forest,zero_in_shallow,0.10366461916039599,4
+Random Forest,log1p_shallow_count,0.09674872669975701,5
+Random Forest,shallow_richness,0.0790732877051371,6
+Random Forest,otu_mean_ra_train,0.022167964061210518,7
+Random Forest,otu_max_ra_train,0.017638068805106034,8
+Random Forest,otu_std_ra_train,0.014513969212119686,9
+Random Forest,is_other,5.072912783677591e-06,10
+XGBoost,log10_shallow_ra,0.4604814648628235,1
+XGBoost,log1p_shallow_count,0.4436245262622833,2
+XGBoost,otu_prevalence_train,0.0471017062664032,3
+XGBoost,zero_in_shallow,0.01488267257809639,4
+XGBoost,otu_max_ra_train,0.009500483982264996,5
+XGBoost,shallow_richness,0.009022267535328865,6
+XGBoost,otu_std_ra_train,0.007409676909446716,7
+XGBoost,otu_mean_ra_train,0.007350883446633816,8
+XGBoost,shallow_rank_norm,0.000446731603005901,9
+XGBoost,is_other,0.00017963422578759491,10

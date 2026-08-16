@@ -6,6 +6,6 @@
   "validation_samples": 71,
   "test_samples": 72,
   "components": 255,
-  "xgb_best_iteration": 499,
-  "total_minutes": 0.5987466971079508
+  "xgb_best_iteration": 490,
+  "total_minutes": 0.6636715849240621
 }
