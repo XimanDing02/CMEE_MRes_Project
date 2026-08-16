@@ -222,8 +222,9 @@ def audit_reference_depths() -> pd.DataFrame:
         )
 
     audit = pd.DataFrame(records)
-    eligible_minimum = float(eligible["calculated_total_reads"].min())
-    audit["threshold_check_passed"] = eligible_minimum >= MIN_REFERENCE_DEPTH
+    audit["threshold_check_passed"] = (
+        audit["minimum_reads"] >= audit["eligibility_threshold"]
+    )
     audit["interpretation"] = np.where(
         audit["split"] == "all_before_filtering",
         "Includes the two low-depth samples before the reference filter.",
@@ -236,7 +237,9 @@ def audit_reference_depths() -> pd.DataFrame:
         encoding="utf-8-sig",
     )
 
-    if eligible_minimum < MIN_REFERENCE_DEPTH:
+    filtered_audit = audit.loc[audit["split"] != "all_before_filtering"]
+
+    if not filtered_audit["threshold_check_passed"].all():
         raise ValueError(
             "At least one eligible reference sample is below 10,000 reads."
         )

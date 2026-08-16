@@ -2,7 +2,7 @@
   "analysis_retrained": false,
   "source": "Outputs from scripts 01-19 in this split pipeline.",
   "reference_depth_threshold": 10000,
-  "reference_depth_check_passed": true,
+  "reference_depth_check_passed": false,
   "eligible_reference_minimum_reads": 11260.0,
   "signed_shannon_definition": "H(predicted) - H(reference)",
   "zero_analysis_title": "Abundance imputation for reference-positive shallow zeros",
