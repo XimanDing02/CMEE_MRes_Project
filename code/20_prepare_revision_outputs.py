@@ -648,12 +648,16 @@ def save_manifest(
 ) -> None:
     """Save a small manifest describing the feedback outputs."""
 
+    filtered_audit = depth_audit.loc[
+        depth_audit["split"] != "all_before_filtering"
+    ]
+
     manifest = {
         "analysis_retrained": False,
         "source": "Outputs from scripts 01-19 in this split pipeline.",
         "reference_depth_threshold": MIN_REFERENCE_DEPTH,
         "reference_depth_check_passed": bool(
-            depth_audit["threshold_check_passed"].all()
+            filtered_audit["threshold_check_passed"].all()
         ),
         "eligible_reference_minimum_reads": float(
             depth_audit.loc[
