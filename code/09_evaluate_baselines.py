@@ -212,7 +212,14 @@ def calculate_sample_metrics(
     split_name: str,
     method_name: str,
 ) -> pd.DataFrame:
-    """Calculate sample-level composition, RAD, and diversity metrics."""
+    """
+    Calculate sample-level composition, RAD, and diversity metrics.
+
+    Complete-composition metrics include OTHER because they compare the
+    closed predicted and reference abundance vectors. RAD, diversity, and
+    richness metrics exclude OTHER because OTHER is a pooled residual
+    component rather than one biological OTU.
+    """
     sample_records = []
 
     for (sample_id, repeat_id), current in dataframe.groupby(
@@ -220,34 +227,73 @@ def calculate_sample_metrics(
         observed=True,
         sort=False,
     ):
-        true_values = current["target_reference_ra"].to_numpy(dtype=float)
-        predicted_values = current[prediction_column].to_numpy(dtype=float)
+        true_all = current["target_reference_ra"].to_numpy(dtype=float)
+        predicted_all = current[prediction_column].to_numpy(dtype=float)
 
-        true_values = np.clip(true_values, 0, None)
-        predicted_values = np.clip(predicted_values, 0, None)
+        true_all = np.clip(true_all, 0.0, None)
+        predicted_all = np.clip(predicted_all, 0.0, None)
 
-        true_values = true_values / true_values.sum()
-        predicted_values = predicted_values / predicted_values.sum()
+        if true_all.sum() <= 0 or predicted_all.sum() <= 0:
+            raise ValueError(
+                f"Invalid complete composition for sample "
+                f"{sample_id}, repeat {repeat_id}."
+            )
+
+        true_all = true_all / true_all.sum()
+        predicted_all = predicted_all / predicted_all.sum()
 
         composition_mae = float(
-            np.mean(np.abs(true_values - predicted_values))
+            np.mean(np.abs(true_all - predicted_all))
         )
         composition_rmse = float(
-            np.sqrt(np.mean((true_values - predicted_values) ** 2))
+            np.sqrt(np.mean((true_all - predicted_all) ** 2))
         )
-        otu_spearman = safe_spearman(true_values, predicted_values)
+        otu_spearman = safe_spearman(true_all, predicted_all)
         bray_curtis = bray_curtis_for_compositions(
-            true_values,
-            predicted_values,
+            true_all,
+            predicted_all,
         )
         js_distance = jensen_shannon_distance(
-            true_values,
-            predicted_values,
+            true_all,
+            predicted_all,
         )
 
-        # Compare RAD shape after sorting abundances.
-        true_rad = np.sort(true_values)[::-1]
-        predicted_rad = np.sort(predicted_values)[::-1]
+        specific = current.loc[current["is_other"] == 0]
+
+        true_specific = specific[
+            "target_reference_ra"
+        ].to_numpy(dtype=float)
+
+        predicted_specific = specific[
+            prediction_column
+        ].to_numpy(dtype=float)
+
+        true_specific = np.clip(true_specific, 0.0, None)
+        predicted_specific = np.clip(predicted_specific, 0.0, None)
+
+        if true_specific.sum() <= 0:
+            raise ValueError(
+                f"Specific-OTU reference RA sums to zero for "
+                f"sample {sample_id}, repeat {repeat_id}."
+            )
+
+        true_specific = true_specific / true_specific.sum()
+
+        if predicted_specific.sum() <= 0:
+            fallback = specific["shallow_ra"].to_numpy(dtype=float)
+
+            if fallback.sum() <= 0:
+                fallback = np.ones_like(fallback, dtype=float)
+
+            predicted_specific = fallback
+
+        predicted_specific = (
+            predicted_specific / predicted_specific.sum()
+        )
+
+        # Compare specific-OTU RAD shape after sorting abundances.
+        true_rad = np.sort(true_specific)[::-1]
+        predicted_rad = np.sort(predicted_specific)[::-1]
 
         true_rad_log = np.log10(true_rad + PSEUDOCOUNT)
         predicted_rad_log = np.log10(predicted_rad + PSEUDOCOUNT)
@@ -266,6 +312,46 @@ def calculate_sample_metrics(
         )
         rad_spearman = safe_spearman(true_rad, predicted_rad)
 
+        number_specific_components = len(true_rad)
+        head_end = max(
+            1,
+            int(np.ceil(number_specific_components * 0.05)),
+        )
+        middle_end = max(
+            head_end + 1,
+            int(np.ceil(number_specific_components * 0.50)),
+        )
+        middle_end = min(middle_end, number_specific_components)
+
+        rad_head_mae_log = float(
+            np.mean(
+                np.abs(
+                    true_rad_log[:head_end]
+                    - predicted_rad_log[:head_end]
+                )
+            )
+        )
+        rad_middle_mae_log = float(
+            np.mean(
+                np.abs(
+                    true_rad_log[head_end:middle_end]
+                    - predicted_rad_log[head_end:middle_end]
+                )
+            )
+        )
+
+        if middle_end < number_specific_components:
+            rad_tail_mae_log = float(
+                np.mean(
+                    np.abs(
+                        true_rad_log[middle_end:]
+                        - predicted_rad_log[middle_end:]
+                    )
+                )
+            )
+        else:
+            rad_tail_mae_log = np.nan
+
         top_1_error = float(
             abs(true_rad[:1].sum() - predicted_rad[:1].sum())
         )
@@ -276,10 +362,10 @@ def calculate_sample_metrics(
             abs(true_rad[:10].sum() - predicted_rad[:10].sum())
         )
 
-        true_shannon = shannon_index(true_values)
-        predicted_shannon = shannon_index(predicted_values)
-        true_simpson = simpson_index(true_values)
-        predicted_simpson = simpson_index(predicted_values)
+        true_shannon = shannon_index(true_specific)
+        predicted_shannon = shannon_index(predicted_specific)
+        true_simpson = simpson_index(true_specific)
+        predicted_simpson = simpson_index(predicted_specific)
 
         shallow_depth = int(current["shallow_depth"].iloc[0])
         one_read_threshold = (
@@ -289,10 +375,10 @@ def calculate_sample_metrics(
         )
 
         true_richness_1read = int(
-            (true_values >= one_read_threshold).sum()
+            (true_specific >= one_read_threshold).sum()
         )
         predicted_richness_1read = int(
-            (predicted_values >= one_read_threshold).sum()
+            (predicted_specific >= one_read_threshold).sum()
         )
 
         sample_records.append(
@@ -308,26 +394,31 @@ def calculate_sample_metrics(
                 "composition_Spearman": otu_spearman,
                 "Bray_Curtis": bray_curtis,
                 "Jensen_Shannon_distance": js_distance,
-                "RAD_MAE_RA": rad_mae,
-                "RAD_RMSE_RA": rad_rmse,
-                "RAD_MAE_log10_RA": rad_mae_log,
-                "RAD_RMSE_log10_RA": rad_rmse_log,
-                "RAD_Spearman": rad_spearman,
+                "RAD_MAE_RA_specific": rad_mae,
+                "RAD_RMSE_RA_specific": rad_rmse,
+                "RAD_MAE_log10_RA_specific": rad_mae_log,
+                "RAD_RMSE_log10_RA_specific": rad_rmse_log,
+                "RAD_Spearman_specific": rad_spearman,
+                "RAD_head_MAE_log10": rad_head_mae_log,
+                "RAD_middle_MAE_log10": rad_middle_mae_log,
+                "RAD_tail_MAE_log10": rad_tail_mae_log,
                 "Top1_cumulative_error": top_1_error,
                 "Top5_cumulative_error": top_5_error,
                 "Top10_cumulative_error": top_10_error,
-                "true_Shannon": true_shannon,
-                "predicted_Shannon": predicted_shannon,
+                "true_Shannon_specific": true_shannon,
+                "predicted_Shannon_specific": predicted_shannon,
                 "Shannon_absolute_error": abs(
                     true_shannon - predicted_shannon
                 ),
-                "true_Simpson": true_simpson,
-                "predicted_Simpson": predicted_simpson,
+                "true_Simpson_specific": true_simpson,
+                "predicted_Simpson_specific": predicted_simpson,
                 "Simpson_absolute_error": abs(
                     true_simpson - predicted_simpson
                 ),
-                "true_richness_1read": true_richness_1read,
-                "predicted_richness_1read": predicted_richness_1read,
+                "true_richness_1read_specific": true_richness_1read,
+                "predicted_richness_1read_specific": (
+                    predicted_richness_1read
+                ),
                 "richness_1read_absolute_error": abs(
                     true_richness_1read
                     - predicted_richness_1read
@@ -348,11 +439,14 @@ def summarize_sample_metrics(
         "composition_Spearman",
         "Bray_Curtis",
         "Jensen_Shannon_distance",
-        "RAD_MAE_RA",
-        "RAD_RMSE_RA",
-        "RAD_MAE_log10_RA",
-        "RAD_RMSE_log10_RA",
-        "RAD_Spearman",
+        "RAD_MAE_RA_specific",
+        "RAD_RMSE_RA_specific",
+        "RAD_MAE_log10_RA_specific",
+        "RAD_RMSE_log10_RA_specific",
+        "RAD_Spearman_specific",
+        "RAD_head_MAE_log10",
+        "RAD_middle_MAE_log10",
+        "RAD_tail_MAE_log10",
         "Top1_cumulative_error",
         "Top5_cumulative_error",
         "Top10_cumulative_error",

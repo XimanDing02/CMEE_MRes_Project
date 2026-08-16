@@ -153,9 +153,9 @@ PRIMARY_METRICS = [
         "Shannon absolute error",
     ),
     (
-        "richness_1read_absolute_error",
-        "One-read richness error",
-        "Absolute error in richness",
+        "richness_fixed_absolute_error",
+        "Fixed-threshold richness error",
+        "Absolute error in fixed-threshold richness",
     ),
 ]
 
@@ -181,8 +181,8 @@ IMPROVEMENT_METRICS = [
         "Shannon error",
     ),
     (
-        "richness_1read_absolute_error",
-        "One-read richness error",
+        "richness_fixed_absolute_error",
+        "Fixed-threshold richness error",
     ),
 ]
 
@@ -382,7 +382,7 @@ def read_inputs():
             "RAD_RMSE_log10_RA_specific",
             "RAD_tail_MAE_log10",
             "Shannon_absolute_error",
-            "richness_1read_absolute_error",
+            "richness_fixed_absolute_error",
         ],
         "Sample-level metrics",
     )

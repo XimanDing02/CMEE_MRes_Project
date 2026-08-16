@@ -1,0 +1,6 @@
+﻿cohort,split,n_samples,minimum_reads,median_reads,mean_reads,maximum_reads,eligibility_threshold,threshold_check_passed,interpretation
+Original selected project,all_before_filtering,476,5150.0,83991.0,87556.41386554622,492477.0,10000,True,Includes the two low-depth samples before the reference filter.
+Eligible reference cohort,all_after_filtering,474,11260.0,84145.0,87895.10337552743,492477.0,10000,True,"After filtering, all reference samples meet the 10,000-read threshold."
+Eligible reference cohort,train,331,11260.0,82447.0,87524.90332326284,492477.0,10000,True,"After filtering, all reference samples meet the 10,000-read threshold."
+Eligible reference cohort,valid,71,11534.0,88243.0,90310.87323943662,236711.0,10000,True,"After filtering, all reference samples meet the 10,000-read threshold."
+Eligible reference cohort,test,72,11843.0,85834.5,87214.77777777778,164601.0,10000,True,"After filtering, all reference samples meet the 10,000-read threshold."

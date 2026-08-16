@@ -1,0 +1,37 @@
+{
+  "analysis_retrained": false,
+  "source": "Outputs from scripts 01-19 in this split pipeline.",
+  "reference_depth_threshold": 10000,
+  "reference_depth_check_passed": true,
+  "eligible_reference_minimum_reads": 11260.0,
+  "signed_shannon_definition": "H(predicted) - H(reference)",
+  "zero_analysis_title": "Abundance imputation for reference-positive shallow zeros",
+  "zero_analysis_scope": "is_other=0, zero_in_shallow=1 and target_reference_ra>0",
+  "cross_depth_richness_metric": "richness_fixed_absolute_error",
+  "fixed_richness_threshold": 0.0001,
+  "revision_output_tables": [
+    "01_reference_depth_audit.csv",
+    "02_signed_shannon_sample_level.csv",
+    "03_signed_shannon_summary.csv",
+    "04_reference_positive_shallow_zero_sample_level.csv",
+    "05_reference_positive_shallow_zero_summary.csv",
+    "06_depth_improvement_principal_metrics.csv"
+  ],
+  "supplemental_figure_files": [
+    "Supplementary_Figure_signed_Shannon_error",
+    "Supplementary_Figure_reference_positive_shallow_zero_imputation",
+    "Supplementary_Figure_depth_sensitivity_fixed_richness"
+  ],
+  "signed_shannon_median_by_method": {
+    "Raw shallow RA": -0.03245903242312731,
+    "Training-mean RA": 0.5956452047900767,
+    "Random Forest": -0.08640523240044637,
+    "XGBoost": -0.09829132687620151
+  },
+  "zero_log10_rmse_mean_by_method": {
+    "Raw shallow RA": 3.8983719003598103,
+    "Training-mean RA": 0.9479414809112802,
+    "Random Forest": 1.6761550801906173,
+    "XGBoost": 1.6426251528326499
+  }
+}
