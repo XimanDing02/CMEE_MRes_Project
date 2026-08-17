@@ -402,7 +402,7 @@ def choose_representative_samples(
 ) -> list[str]:
     """
     Select best, median and worst Random Forest samples according to
-    mean Bray-Curtis distance across shallow-sequencing repeats.
+    mean RAD log10-RMSE across shallow-sequencing repeats.
     """
 
     sample_records = []
@@ -431,17 +431,26 @@ def choose_representative_samples(
                 repeat_data["pred_random_forest_ra"].to_numpy(dtype=float)
             )
 
-            bray_curtis = 0.5 * np.sum(
-                np.abs(true_values - rf_values)
+            true_rad_log = np.log10(
+                np.sort(true_values)[::-1] + PSEUDO_COUNT
+            )
+            rf_rad_log = np.log10(
+                np.sort(rf_values)[::-1] + PSEUDO_COUNT
             )
 
-            repeat_distances.append(float(bray_curtis))
+            rad_rmse_log = float(
+                np.sqrt(
+                    np.mean((true_rad_log - rf_rad_log) ** 2)
+                )
+            )
+
+            repeat_distances.append(rad_rmse_log)
 
         if repeat_distances:
             sample_records.append(
                 {
                     "sample_id": str(sample_id),
-                    "rf_mean_bray_curtis": float(
+                    "rf_mean_rad_rmse_log10": float(
                         np.mean(repeat_distances)
                     ),
                 }
@@ -450,7 +459,7 @@ def choose_representative_samples(
     sample_performance = (
         pd.DataFrame(sample_records)
         .sort_values(
-            "rf_mean_bray_curtis",
+            "rf_mean_rad_rmse_log10",
             ascending=True,
         )
         .reset_index(drop=True)
@@ -998,17 +1007,17 @@ def plot_reference_vs_prediction(
 
 
 # ============================================================
-# 9. Figure 4: Representative RAD reconstruction
+# 9. Figure 4: Representative RAD comparisons
 # ============================================================
 
 def plot_rad_examples(
     test_predictions: pd.DataFrame,
 ) -> None:
-    """Plot RAD reconstruction for best, median and worst RF samples."""
+    """Plot RAD profiles for low, median and high RF RAD-error samples."""
 
     print_step(
         5,
-        "Create Figure 4: representative RAD reconstructions",
+        "Create Figure 4: representative RAD profile comparisons",
     )
 
     representative_samples = choose_representative_samples(
@@ -1016,9 +1025,9 @@ def plot_rad_examples(
     )
 
     sample_roles = [
-        "Best RF sample",
-        "Median RF sample",
-        "Worst RF sample",
+        "Low RF RAD error",
+        "Median RF RAD error",
+        "High RF RAD error",
     ]
 
     panel_count = len(representative_samples)
@@ -1115,7 +1124,7 @@ def plot_rad_examples(
     )
 
     fig.suptitle(
-        "Figure 4. Representative rank-abundance reconstructions",
+        "Representative rank-abundance profile comparisons",
         fontsize=15,
         fontweight="bold",
         y=0.995,
