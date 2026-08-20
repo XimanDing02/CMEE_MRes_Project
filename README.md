@@ -1,7 +1,7 @@
-# Project Pipeline
+# Predicting OTU relative-abundance profiles Pipeline
 
 ## Table of Contents
-- [16S Relative Abundance Recovery Pipeline](#16s-relative-abundance-recovery-pipeline)
+- [Predicting OTU relative-abundance profiles Pipeline](#predicting-otu-relative-abundance-profiles-pipeline)
   - [Table of Contents](#table-of-contents)
   - [Project Structure](#project-structure)
   - [Brief Description](#brief-description)
